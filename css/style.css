@@ -1,7 +1,24 @@
-/* .token.selector,
-.token.property,
-.token.punctuation,
-.token.function,
-.token.property {
-    color: rgb(222, 222, 222);
-} */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+}
+
+#codeArea {
+    width: 100%;
+    overflow: scroll;
+}
+
+#styleEditor {
+    height: 100vh;
+    display: flex;
+    width: 50%;
+}

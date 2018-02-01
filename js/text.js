@@ -12,17 +12,14 @@ textInfo = `
 }
 
 /* 白色背景太单调了，我们来点背景 */
-html {
-  color: rgb(222,222,222); background: rgb(0,43,54);
+.styleEditor {
+  color: rgb(222,222,222);
+  background: rgb(0,43,54);
 }
 
 /* 文字离边框太近了 */
 .styleEditor {
-  padding: .5em;
-  border: 1px solid white;
-  margin: .5em;
-  overflow: auto;
-  width: 45vw; height: 90vh;
+  padding: 16px;
 }
 
 /* 代码高亮 */
@@ -32,24 +29,38 @@ html {
 .token.function{ color: rgb(42,161,152); }
 
 /* 加点 3D 效果呗 */
-html{
-  perspective: 1000px;
-}
-.styleEditor {
-  position: fixed; left: 0; top: 0;
-  -webkit-transition: none;
-  transition: none;
-  -webkit-transform: rotateY(5deg) translateZ(-50px) ;
-          transform: rotateY(5deg) translateZ(-50px) ;
+#codeArea {
+    transform: rotate(360deg);
 }
 
 /* 接下来我给自己准备一个编辑器 */
-.resumeEditor{
-  position: fixed; right: 0; top: 0;
-  padding: .5em;  margin: .5em;
-  width: 48vw; height: 90vh;
-  border: 1px solid;
-  background: white; color: #222;
-  overflow: auto;
+.textEditor {
+    height: 100vh;
+    width: 50%;
+    background-color: yellow;
+    color: black;
 }
+`
+
+markdownInfo = `
+# 自我介绍
+我叫 XXX
+1990 年 1 月出生
+XXX 学校毕业
+自学前端半年
+希望应聘前端开发岗位
+# 技能介绍
+熟悉 JavaScript CSS
+# 项目介绍
+1. XXX 轮播
+2. XXX 简历
+3. XXX 画板
+# 联系方式
+- QQ xxxxxxxx
+- Email xxxxxxxx
+- 手机 xxxxxxx
+# 联系方式
+- QQ xxxxxxxx
+- Email xxxxxxxx
+- 手机 xxxxxxx
 `
