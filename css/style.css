@@ -17,7 +17,8 @@ body {
     overflow: scroll;
 }
 
-#styleEditor {
+#styleEditor,
+#textEditor {
     height: 100vh;
     display: flex;
     width: 50%;

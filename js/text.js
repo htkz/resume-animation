@@ -33,34 +33,49 @@ textInfo = `
     transform: rotate(360deg);
 }
 
-/* 接下来我给自己准备一个编辑器 */
+/* 现在正式开始 */
+/* 我需要一张白纸 */
 .textEditor {
     height: 100vh;
     width: 50%;
-    background-color: yellow;
     color: black;
+    padding: 16px;
 }
+
+/* 于是我就可以在白纸上写字了，请看右边 */
 `
 
+textInfo2 = `
+/* 接下来用一个优秀的库 marked.js
+ * 把 Markdown 变成 HTML
+ */
+`
+
+textInfo3 = `
+/*
+ * 这就是我的会动的简历
+ * 谢谢观看
+ */`
+
 markdownInfo = `
-# 自我介绍
-我叫 XXX
-1990 年 1 月出生
-XXX 学校毕业
-自学前端半年
-希望应聘前端开发岗位
-# 技能介绍
-熟悉 JavaScript CSS
+# Htkz
+明光村中学毕业，前端小白，有三个月的前端基础，现在在找工作。
+
+# 技能
+* HTML+CSS+JS
+* Jquery+Vue
+* Node.js 开发
+* Django 开发
+
 # 项目介绍
-1. XXX 轮播
-2. XXX 简历
-3. XXX 画板
-# 联系方式
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
-# 联系方式
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
+1. [数据计算器](http://sigmod.dyndns.org:8000/app/data_calc/)
+2. [Canvas画板](https://htkz.github.io/canvas/dist/index.html)
+3. [在线简历](https://htkz.github.io/resume/resume.html)
+4. [导航首页](https://htkz.github.io/test-jirengu/class/class16/nav/index.html)
+
+# 链接
+* [GitHub](https://github.com/htkz)
+* [我的文章](https://www.jianshu.com/u/2e98f264f88a)
+
+> 如果你喜欢这个效果，Fork [我的项目](https://github.com/htkz/resume-animation)，打造你自己的简历！
 `
