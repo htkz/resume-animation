@@ -3,7 +3,11 @@ const styleArea = $('#styleArea');
 let mdArea = $('#mdArea')
 const mdStyleArea = $('mdStyleArea');
 
-const writeCss = (prefix, css, callback) => {
+// interval time
+const slowTime = 50;
+const quickTime = 5;
+
+const writeCss = (prefix, css, intervalTime, callback) => {
     let n = 0;
     const intervalId = setInterval(() => {
         n += 1;
@@ -16,10 +20,10 @@ const writeCss = (prefix, css, callback) => {
             window.clearInterval(intervalId);
             callback();
         }
-    }, 10)
+    }, intervalTime)
 }
 
-const writeMarkdown = (prefix, md, callback) => {
+const writeMarkdown = (prefix, md, intervalTime, callback) => {
     let m = 0;
     const intervalId_md = setInterval(() => {
         m += 1;
@@ -30,7 +34,7 @@ const writeMarkdown = (prefix, md, callback) => {
             window.clearInterval(intervalId_md);
             callback();
         }
-    }, 10);
+    }, intervalTime);
 }
 
 const replacePreWithDiv = () => {
@@ -39,13 +43,12 @@ const replacePreWithDiv = () => {
     mdArea.addClass('markdown-body')
 }
 
-writeCss('', textInfo, () => {
-    writeMarkdown('', markdownInfo, () => {
-        writeCss(textInfo, textInfo2, () => {
+writeCss('', textInfo, slowTime, () => {
+    writeMarkdown('', markdownInfo, slowTime, () => {
+        writeCss(textInfo, textInfo2, slowTime, () => {
             replacePreWithDiv();
-            writeMarkdown(marked(markdownInfo), '', () => {
+            writeMarkdown('', marked(markdownInfo), quickTime, () => {
                 writeCss(textInfo + textInfo2, textInfo3, () => {
-                    
                 })
             })
         })
