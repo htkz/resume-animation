@@ -14,7 +14,6 @@ body {
 
 #codeArea,
 #mdArea {
-    /* width: 100%; */
     overflow: scroll;
 }
 
