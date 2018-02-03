@@ -3,7 +3,7 @@ const $styleArea = $('#styleArea');
 let $mdArea = $('#mdArea');
 
 // interval time
-const slowTime = 5;
+const slowTime = 50;
 const quickTime = 5;
 
 const writeCss = (prefix, css, intervalTime) => {
