@@ -1,3 +1,4 @@
+const codeArea = 123;
 const $codeArea = $('#codeArea');
 const $styleArea = $('#styleArea');
 const $mdArea = $('#mdArea')
