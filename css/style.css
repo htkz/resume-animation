@@ -12,7 +12,8 @@ body {
     width: 0px;  /* remove scrollbar space */
 }
 
-#codeArea {
+#codeArea,
+#mdArea {
     width: 100%;
     overflow: scroll;
 }
