@@ -14,7 +14,7 @@ const writeCss = (prefix, css, intervalTime, callback) => {
         const codeWithHighLightTag = Prism.highlight(prefix + codeString, Prism.languages.css);
         $codeArea.html(codeWithHighLightTag);
         $styleArea.html(codeString);
-        $codeArea.scrollTop(codeArea[0].scrollHeight);
+        $codeArea.scrollTop($codeArea[0].scrollHeight);
         if (n >= css.length) {
             window.clearInterval(intervalId);
             callback();
