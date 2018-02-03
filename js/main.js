@@ -1,6 +1,6 @@
 const codeArea = $('#codeArea');
 const styleArea = $('#styleArea');
-const mdArea = $('#mdArea')
+const $mdArea = $('#mdArea')
 
 // interval time
 const slowTime = 5;
@@ -41,11 +41,11 @@ const replacePreWithDiv = () => {
 }
 
 writeCss('', textInfo, slowTime, () => {
-    writeMarkdown(mdArea, '', markdownInfo, slowTime, () => {
+    writeMarkdown($mdArea, '', markdownInfo, slowTime, () => {
         writeCss(textInfo, textInfo2, slowTime, () => {
             // to fix the bug on mobile
             // SyntaxError: Can't create duplicate variable that shadows a global property: 'mdArea'
-            mdArea.contents().unwrap().wrap('<div/>');
+            $mdArea.contents().unwrap().wrap('<div/>');
             const newMdArea = $('.textEditor').children('div');
             newMdArea.addClass('markdown-body')
             writeMarkdown(newMdArea, '', marked(markdownInfo), quickTime, () => {
