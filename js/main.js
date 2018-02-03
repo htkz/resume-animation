@@ -1,10 +1,9 @@
 const codeArea = $('#codeArea');
 const styleArea = $('#styleArea');
 let mdArea = $('#mdArea')
-const mdStyleArea = $('mdStyleArea');
 
 // interval time
-const slowTime = 50;
+const slowTime = 5;
 const quickTime = 5;
 
 const writeCss = (prefix, css, intervalTime, callback) => {
@@ -23,7 +22,7 @@ const writeCss = (prefix, css, intervalTime, callback) => {
     }, intervalTime)
 }
 
-const writeMarkdown = (prefix, md, intervalTime, callback) => {
+const writeMarkdown = (mdArea, prefix, md, intervalTime, callback) => {
     let m = 0;
     const intervalId_md = setInterval(() => {
         m += 1;
@@ -38,17 +37,20 @@ const writeMarkdown = (prefix, md, intervalTime, callback) => {
 }
 
 const replacePreWithDiv = () => {
-    mdArea.contents().unwrap().wrap('<div/>');
-    mdArea = $('.textEditor').children('div');
-    mdArea.addClass('markdown-body')
+
 }
 
 writeCss('', textInfo, slowTime, () => {
-    writeMarkdown('', markdownInfo, slowTime, () => {
+    writeMarkdown(mdArea, '', markdownInfo, slowTime, () => {
         writeCss(textInfo, textInfo2, slowTime, () => {
-            replacePreWithDiv();
-            writeMarkdown('', marked(markdownInfo), quickTime, () => {
-                writeCss(textInfo + textInfo2, textInfo3, () => {
+            // to fix the bug on mobile
+            // SyntaxError: Can't create duplicate variable that shadows a global property: 'mdArea'
+            mdArea.contents().unwrap().wrap('<div/>');
+            newMdArea = $('.textEditor').children('div');
+            newMdArea.addClass('markdown-body')
+            writeMarkdown(newMdArea, '', marked(markdownInfo), quickTime, () => {
+                writeCss(textInfo + textInfo2, textInfo3, slowTime, () => {
+                    console.log('Finished!');
                 })
             })
         })
